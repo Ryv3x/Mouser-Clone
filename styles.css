@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mouser Clone — Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand">
+        <img src="assets/logo.png" alt="logo" class="logo" />
+      </div>
+      <div class="search">
+        <input id="searchInput" placeholder="Search for parts, manufacturers, datasheets..." />
+        <button id="searchBtn">Search</button>
+      </div>
+      <div class="actions">
+        <button class="btn">Sign In</button>
+        <button class="btn ghost">Cart</button>
+      </div>
+    </div>
+
+    <nav class="main-nav">
+      <div class="container nav-row">
+        <ul>
+          <li><a href="#">All Categories</a></li>
+          <li><a href="#">New Products</a></li>
+          <li><a href="#">Datasheets</a></li>
+          <li><a href="#">Manufacturers</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container main-grid">
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <ul class="cats">
+        <li>Passive Components</li>
+        <li>Semiconductors</li>
+        <li>Interconnects</li>
+        <li>Electromechanical</li>
+        <li>Test & Measurement</li>
+      </ul>
+      <hr/>
+      <h4>Filters</h4>
+      <label><input type="checkbox" /> In stock</label><br/>
+      <label><input type="checkbox" /> RoHS</label>
+    </aside>
+
+    <section class="content">
+      <div class="hero">
+        <h1>Electronic Components Marketplace</h1>
+        <p>Search millions of parts, compare manufacturers and download datasheets.</p>
+      </div>
+
+      <div class="controls">
+        <div>Showing <strong>24</strong> of 10,000 results</div>
+        <select id="sort">
+          <option>Sort: Relevance</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+      </div>
+
+      <div id="productGrid" class="product-grid">
+        <!-- product cards injected by JS -->
+      </div>
+
+      <div class="pagination">
+        <button class="btn ghost">Prev</button>
+        <button class="btn">Next</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="foot-col">
+        <img src="assets/logo.png" alt="logo" style="width:140px"/>
+        <p>Demo clone for learning and testing only.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#">About</a><br/>
+        <a href="#">Careers</a>
+      </div>
+      <div class="foot-col">
+        <h4>Support</h4>
+        <a href="#">Contact</a><br/>
+        <a href="#">Help</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
