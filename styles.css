@@ -1,101 +1,40 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mouser Clone — Demo</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-row">
-      <div class="brand">
-        <img src="assets/logo.png" alt="logo" class="logo" />
-      </div>
-      <div class="search">
-        <input id="searchInput" placeholder="Search for parts, manufacturers, datasheets..." />
-        <button id="searchBtn">Search</button>
-      </div>
-      <div class="actions">
-        <button class="btn">Sign In</button>
-        <button class="btn ghost">Cart</button>
-      </div>
-    </div>
+:root{
+  --accent:#0a66c2;
+  --muted:#6b7280;
+  --card:#fff;
+  --bg:#f4f6f8;
+}
+*{box-sizing:border-box}
+body{font-family:Inter, system-ui, Arial; margin:0; background:var(--bg); color:#111}
+.container{width:1200px; max-width:95%; margin:0 auto}
+.header-row{display:flex; align-items:center; gap:16px; padding:14px 0}
+.brand{flex:0 0 auto}
+.logo{height:36px}
+.search{flex:1; display:flex; gap:8px}
+.search input{flex:1;padding:10px;border-radius:6px;border:1px solid #d1d5db}
+.search button{padding:10px 14px;border-radius:6px;border:0;background:var(--accent);color:#fff}
+.actions{display:flex; gap:8px}
+.btn{padding:8px 12px;border-radius:6px;border:0;background:#111;color:#fff;cursor:pointer}
+.btn.ghost{background:transparent;color:#111;border:1px solid #ddd}
 
-    <nav class="main-nav">
-      <div class="container nav-row">
-        <ul>
-          <li><a href="#">All Categories</a></li>
-          <li><a href="#">New Products</a></li>
-          <li><a href="#">Datasheets</a></li>
-          <li><a href="#">Manufacturers</a></li>
-          <li><a href="#">Support</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+.main-nav{background:#fff; border-top:1px solid #eee; border-bottom:1px solid #eee}
+.nav-row ul{display:flex; gap:18px; list-style:none; padding:10px 0; margin:0}
+.nav-row a{text-decoration:none;color:#111}
 
-  <main class="container main-grid">
-    <aside class="sidebar">
-      <h3>Categories</h3>
-      <ul class="cats">
-        <li>Passive Components</li>
-        <li>Semiconductors</li>
-        <li>Interconnects</li>
-        <li>Electromechanical</li>
-        <li>Test & Measurement</li>
-      </ul>
-      <hr/>
-      <h4>Filters</h4>
-      <label><input type="checkbox" /> In stock</label><br/>
-      <label><input type="checkbox" /> RoHS</label>
-    </aside>
-
-    <section class="content">
-      <div class="hero">
-        <h1>Electronic Components Marketplace</h1>
-        <p>Search millions of parts, compare manufacturers and download datasheets.</p>
-      </div>
-
-      <div class="controls">
-        <div>Showing <strong>24</strong> of 10,000 results</div>
-        <select id="sort">
-          <option>Sort: Relevance</option>
-          <option>Price: Low to High</option>
-          <option>Price: High to Low</option>
-        </select>
-      </div>
-
-      <div id="productGrid" class="product-grid">
-        <!-- product cards injected by JS -->
-      </div>
-
-      <div class="pagination">
-        <button class="btn ghost">Prev</button>
-        <button class="btn">Next</button>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="foot-col">
-        <img src="assets/logo.png" alt="logo" style="width:140px"/>
-        <p>Demo clone for learning and testing only.</p>
-      </div>
-      <div class="foot-col">
-        <h4>Company</h4>
-        <a href="#">About</a><br/>
-        <a href="#">Careers</a>
-      </div>
-      <div class="foot-col">
-        <h4>Support</h4>
-        <a href="#">Contact</a><br/>
-        <a href="#">Help</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+.main-grid{display:grid; grid-template-columns:260px 1fr; gap:18px; padding:22px 0}
+.sidebar{background:#fff;padding:16px;border-radius:10px}
+.content .hero{background:linear-gradient(90deg, #ffffff, #f7fbff); padding:28px;border-radius:10px;margin-bottom:12px}
+.controls{display:flex;justify-content:space-between;align-items:center;margin:10px 0}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.card{background:var(--card);border-radius:10px;padding:12px;box-shadow:0 6px 14px rgba(15,23,42,0.06)}
+.card img{width:100%;height:120px;object-fit:contain;background:#f8fafc;border-radius:6px}
+.card .title{font-weight:600;margin:10px 0;font-size:14px}
+.card .meta{font-size:13px;color:var(--muted)}
+.pagination{display:flex;gap:8px;justify-content:center;margin:22px 0}
+.footer{background:#fff;padding:28px 0;border-top:1px solid #eee;margin-top:28px}
+.footer .container{display:flex;gap:48px;align-items:flex-start}
+.foot-col a{display:inline-block;color:var(--muted);text-decoration:none;margin:6px 0}
+@media(max-width:900px){
+  .main-grid{grid-template-columns:1fr; padding:16px}
+  .sidebar{order:2}
+}
